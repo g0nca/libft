@@ -6,7 +6,7 @@
 /*   By: ggomes-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:28:36 by ggomes-v          #+#    #+#             */
-/*   Updated: 2024/11/04 13:50:35 by ggomes-v         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:24:54 by ggomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,15 +20,17 @@ int	ft_atoi(const char *nptr)
 	res = 0;
 	signal = 1;
 	i = 0;
-	while (nptr[i] >= 0 && nptr[i] <= 42)
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-	while (nptr[i] == '-' || nptr[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
+		{
 			signal = -signal;
+		}
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	while (nptr[i] && nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		res *= 10;
 		res += nptr[i] - 48;
@@ -40,8 +42,13 @@ int	ft_atoi(const char *nptr)
 #include <stdio.h>
 int main(void)
 {
-    char test[] = "   --+-+-9978rer6786";
-    printf("%d\n", ft_atoi(test));
+    printf("%d\n", ft_atoi("--123"));
+    printf("%d\n", ft_atoi("-+123"));
+    printf("%d\n", ft_atoi("+-123"));
+    printf("%d\n", ft_atoi("++123"));
+    printf("%d\n", ft_atoi(""));
+    printf("%d\n", ft_atoi("--+-+-997rer6786"));
+    
     return(0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: ggomes-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:28:15 by ggomes-v          #+#    #+#             */
-/*   Updated: 2024/11/04 16:27:53 by ggomes-v         ###   ########.fr       */
+/*   Updated: 2024/11/06 17:15:54 by ggomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -61,8 +61,8 @@ char	**ft_split(char const *s, char c)
 	char	**array;
 	int		i;
 
-	array = (char **)malloc((count_words(s) + 1) * sizeof(char *));
-	if (array == NULL)
+	array = (char **)malloc(sizeof(char *) * (count_words(s)));
+	if (!s || !array)
 		return (NULL);
 	i = 0;
 	while (*s && c != '\0')
@@ -78,11 +78,11 @@ char	**ft_split(char const *s, char c)
 	}
 	return (array);
 }
-/*
+
 int	main(void)
 {
-	const char str[] = "Hello World !";
-	char src = '\0';
+	const char str[] = "hello!";
+	char src = ' ';
 	char **vector = NULL;
 	int i;
 
@@ -95,6 +95,7 @@ int	main(void)
 		i++;
 	}
 	free(vector);
+	vector = NULL;
 	return(0);
 }
-*/
+

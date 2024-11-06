@@ -6,18 +6,17 @@
 /*   By: ggomes-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:18:29 by ggomes-v          #+#    #+#             */
-/*   Updated: 2024/11/04 16:23:08 by ggomes-v         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:23:38 by ggomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
-	int		i;
+	unsigned int	i;
+	char			*str;
 
-	str = 0;
-	str = (char *)malloc(ft_strlen((s) + 1) * sizeof(char));
+	str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (!str)
 		return (NULL);
 	i = 0;

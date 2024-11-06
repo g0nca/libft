@@ -6,7 +6,7 @@
 /*   By: ggomes-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:05:45 by ggomes-v          #+#    #+#             */
-/*   Updated: 2024/11/04 14:34:41 by ggomes-v         ###   ########.fr       */
+/*   Updated: 2024/11/06 12:54:04 by ggomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,27 +15,38 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	lendst;
 	size_t	lensrc;
+	size_t	i;
+	size_t	j;
 
-	lensrc = 0;
+	lensrc = ft_strlen(src);
 	lendst = ft_strlen(dst);
-	if (size > 0)
+	if (size == 0 || lendst >= size)
+		return (size + lensrc);
+	i = lendst;
+	j = 0;
+	while (dst[i] != '\0')
+		i++;
+	while (src[j] != '\0' && i < size -1)
 	{
-		while (src[lensrc] && lensrc < (size - 1))
-		{
-			dst[lendst + lensrc] = src[lensrc];
-			lensrc++;
-		}
-		dst[lendst + lensrc] = '\0';
+		dst[i] = src[j];
+		i++;
+		j++;
 	}
-	return (ft_strlen(dst));
+	dst[i] = '\0';
+	return (lendst + lensrc);
 }
 /*
 #include <stdio.h>
 int main(void)
 {
-    char test1[] = "Ola";
-    char test2[] = "Mundo";
-    printf("%ld\n", ft_strlcat(test1, test2, 20));
+    printf("%ld\n", ft_strlcat("pqrstuvwxyz", "abcd", 0));
+    printf("%ld\n", ft_strlcat("pqrstuvwxyz", "abcd", 1));
+    printf("%ld\n", ft_strlcat("pqrstuvwxyz", "abcd", 2));
+    printf("%ld\n", ft_strlcat("pqrstuvwxyz", "abcd", 3));
+    printf("%ld\n", ft_strlcat("pqrstuvwxyz", "abcd", 4));
+    printf("%ld\n", ft_strlcat("pqrstuvwxyz", "abcd", 5));
+
+
     return(0);
 }
 */

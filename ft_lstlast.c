@@ -6,13 +6,15 @@
 /*   By: ggomes-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:05:33 by ggomes-v          #+#    #+#             */
-/*   Updated: 2024/11/05 14:41:38 by ggomes-v         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:18:38 by ggomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return (0);
 	while (lst->next != NULL)
 	{
 		lst = lst->next;

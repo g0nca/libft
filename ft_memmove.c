@@ -6,7 +6,7 @@
 /*   By: ggomes-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:25:42 by ggomes-v          #+#    #+#             */
-/*   Updated: 2024/11/04 14:42:40 by ggomes-v         ###   ########.fr       */
+/*   Updated: 2024/11/06 16:22:22 by ggomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
 	i = 0;
+	if (!dest && !src)
+		return (0);
 	if (d > s)
 	{
 		while (n-- > 0)

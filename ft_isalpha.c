@@ -6,7 +6,7 @@
 /*   By: ggomes-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:07:16 by ggomes-v          #+#    #+#             */
-/*   Updated: 2024/11/04 13:44:48 by ggomes-v         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:06:25 by ggomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,8 +14,8 @@
 int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (0);
-	return (1);
+		return (1);
+	return (0);
 }
 /*
 #include <stdio.h>

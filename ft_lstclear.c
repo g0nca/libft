@@ -6,7 +6,7 @@
 /*   By: ggomes-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:02:44 by ggomes-v          #+#    #+#             */
-/*   Updated: 2024/11/05 16:35:24 by ggomes-v         ###   ########.fr       */
+/*   Updated: 2024/11/06 10:24:13 by ggomes-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -23,7 +23,19 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
-
+/*
+//next_node = (*lst)->next;
+//como **lst e um ponteiro para um ponteiro para o primeiro no da lista
+// *lst e um ponteiro para o no atual, entao (*lst)->next e o proximo no da lista
+// como lst e um ponteiro duplo (t_list **lst) ao usar 
+// *lst estamos acessar o ponteiro
+// para o no atual colocamos entre parenteses para deixar claro que ->next esta 
+// acessando o proximo no do ponteiro e nao o proximo no de lst diretamente
+//se escrevessemos *lst->next o compilador interpretaria 
+//como *(lst->next), oque resultaria em erro, 
+//pois lst e um ponteiro e nao possui o campo next. 
+//Por isso os parenteses sao necessarios para indicar que queremos 
+//acessar o campo next do no para o qual *lst aponta
 void    print_list(t_list *lst)
 {
        // t_list *temp = lst;
@@ -55,6 +67,4 @@ int	main(void)
 	else
 		printf("Erro ao limpar a lista");
 	return (0);
-}
-
-
+}*/
