@@ -42,9 +42,7 @@ static char	*save_words(const char *s, char c)
 
 	n = 0;
 	while (s[n] != '\0' && s[n] != c)
-	{
 		n++;
-	}
 	str = (char *)malloc(sizeof(char) * (n + 1));
 	if (str == NULL)
 		return (NULL);
@@ -111,7 +109,7 @@ int	main(void)
 {
 	int i = 0;
 	char	**tabstr;
-	if (!(tabstr = ft_split("nonempty", '\0')))
+	if (!(tabstr = ft_split("   elit. Sed non risus. Suspendisse   ", ' ')))
 		printf("NULL");
 	else
 	{
